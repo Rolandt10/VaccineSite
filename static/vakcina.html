@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vakcina nyilvántartó</title>
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://image.flaticon.com/icons/png/512/1092/1092409.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body id="body">
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav__logo d-flex justify-content-center">
+                    <span class="nav__logo-text">Nyilvántartás</span>
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+                <ul class="nav__list">
+                    <a href="oltopontok.html" class="nav__link active">
+                        <i class='bx bx-plus-medical nav__icon'></i>
+                        <span class="nav__text">Oltópontok</span>
+                    </a>         
+                </ul>
+            </div>
+            <a href="index.html" class="nav__link">           
+                <i class='bx bx-log-out-circle nav__icon'></i>
+                <span class="nav__text">Kilépés</span>
+            </a>
+        </nav>
+    </div>
+    <h2>Vakcinák</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Gyártó</th>
+            <th scope="col">Generáció</th>
+            <th scope="col">Darabszám</th>
+            <th scope="col"></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pfizer</td>
+            <td>1</td>
+            <td>10000</td>
+            <td>
+              <a href="editvakcina.html" class="btn btn__color" title="Vakcina módosítása"><i class='bx bx-edit'></i></a>
+              <a href="#" class="btn btn__color"><i class='bx bx-trash' title="Vakcina törlése"></i></a>
+              <a href="vakcina_noveles.html" class="btn btn__color" title="Darabszám növelése"><i class='bx bx-plus-circle' ></i></a>
+              <a href="vakcina_csokkentes.html" class="btn btn__color" title="Darabszám csökkentése"><i class='bx bx-minus-circle' ></i></a>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    <a href="addnewvakcina.html" class="btn btn__color">Hozzáadás</a>
+    <a href="oltopontok.html" class="btn btn__color">Vissza</a>
+    <script src="js/sidebar.js"></script>
+</body>
+</html> 
