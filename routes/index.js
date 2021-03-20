@@ -13,52 +13,86 @@ const saveVaccinePointMW = require('../middleware/vaccinationpoint/saveVaccinePo
 
 
 module.exports = function(app) {
-    app.get('/', function(req, res, next) {
 
+    let objectRep = {};
+
+    app.get('/', function(req, res, next) {
+        checkpassMW(objectRep);
+        renderMW(objectRep, 'index');
     });
 
     app.get('/information', function(req, res, next) {
-        
+        renderMW(objectRep, 'public_oltopontok');
     });
 
     app.get('/vaccinationpoint', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        getVaccinePointsMW(objectRep);
+        renderMW(objectRep, 'oltopontok');
     });
 
     app.use('/vaccinationpoint/new', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        saveVaccinePointMW(objectRep);
+        renderMW(objectRep, 'addnewoltopont');
     });
 
     app.use('/vaccinationpoint/edit/:oltopontid', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        getVaccinePointMW(objectRep);
+        saveVaccinePointMW(objectRep);
+        renderMW(objectRep, 'editoltopont');
     });
 
     app.get('/vaccinationpoint/delete/:oltopontid', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        getVaccinePointMW(objectRep);
+        delVaccinePointMW(objectRep);
     });
 
-    app.get('/vaccinationpoint/delete/:oltopontid', function(req, res, next) {
-        
+    app.use('/vaccine/:oltopontid', function(req, res, next) {
+        authenticationMW(objectRep);
+        getVaccinePointMW(objectRep);
+        getVaccinesMW(objectRep);
+        renderMW(objectRep, 'vakcina');
     });
 
     app.use('/vaccine/:oltopontid/new', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        getVaccinePointMW(objectRep);
+        saveVaccineMW(objectRep);
+        renderMW(objectRep, 'addnewvakcina');
     });
 
     app.use('/vaccine/:oltopontid/edit/:vakcinaid', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        getVaccinePointMW(objectRep);
+        getVaccineMW(objectRep);
+        saveVaccineMW(objectRep);
+        renderMW(objectRep, 'editvakcina');
     });
 
     app.use('/vaccine/:oltopontid/decrease/:vakcinaid', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        getVaccinePointMW(objectRep);
+        getVaccineMW(objectRep);
     });
 
     app.use('/vaccine/:oltopontid/increase/:vakcinaid', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        getVaccinePointMW(objectRep);
+        getVaccineMW(objectRep);
     });
 
     app.get('/vaccine/:oltopontid/delete/:vakcinaid', function(req, res, next) {
-        
+        authenticationMW(objectRep);
+        getVaccinePointMW(objectRep);
+        getVaccineMW(objectRep);
+        delVaccineMW(objectRep);
+    });
+
+    app.use('/logout', function(req, res, next) {
+        logoutMW(objectRep);
     });
 
     
