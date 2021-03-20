@@ -1,30 +1,31 @@
-//
+//Ellenőrzi, hogy a user be van-e jelentkezve
 const authenticationMW = require('../middleware/authenticationMW');
-//
+//Jelszó helyességének ellenőrzése
+//Ha helyes, akkor létrehoz egy új session-t
 const checkpassMW = require('../middleware/checkPassMW');
-//
+//Törli a felhasználó session-jét
 const logoutMW = require('../middleware/logoutMW');
-//
+//Template engine használatakor, az értékek kiírására
 const renderMW = require('../middleware/renderMW');
-//
+//Töröl egy vakcinát a db-ből
 const delVaccineMW = require('../middleware/vaccine/delVaccineMW');
-//
+//Betölt egy vakcinát a db-ből
 const getVaccineMW = require('../middleware/vaccine/getVaccineMW');
-//
+//Betölti az összes vakcinát a db-ből
 const getVaccinesMW = require('../middleware/vaccine/getVaccinesMW');
-//
+//Elment egy vakcinát a db-be
 const saveVaccineMW = require('../middleware/vaccine/saveVaccineMW');
-//
+//Töröl egy oltópontot a db-ből
 const delVaccinePointMW = require('../middleware/vaccinationpoint/delVaccPointMW');
-//
+//Betölt egy oltópontot a db-ből
 const getVaccinePointMW = require('../middleware/vaccinationpoint/getVaccPointMW');
-//
+//Betölti az összes oltópontot a db-ből
 const getVaccinePointsMW = require('../middleware/vaccinationpoint/getVaccPointsMW');
-//
+//Elment egy oltópontot a db-be
 const saveVaccinePointMW = require('../middleware/vaccinationpoint/saveVaccinePointMW');
-//
+//Csökkenti a vakcina számát, illetve elmenti azt a db-be
 const decreaseVaccineNumberMW = require('../middleware/vaccine/decreaseVaccineNumberMW');
-//
+//Növeli a vakcina szémét, illetve elmenti azt a db-be
 const increaseVaccineNumberMW = require('../middleware/vaccine/increaseVaccineNumberMW');
 
 
