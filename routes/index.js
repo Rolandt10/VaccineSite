@@ -1,15 +1,31 @@
+//
 const authenticationMW = require('../middleware/authenticationMW');
+//
 const checkpassMW = require('../middleware/checkPassMW');
+//
 const logoutMW = require('../middleware/logoutMW');
+//
 const renderMW = require('../middleware/renderMW');
+//
 const delVaccineMW = require('../middleware/vaccine/delVaccineMW');
+//
 const getVaccineMW = require('../middleware/vaccine/getVaccineMW');
+//
 const getVaccinesMW = require('../middleware/vaccine/getVaccinesMW');
+//
 const saveVaccineMW = require('../middleware/vaccine/saveVaccineMW');
+//
 const delVaccinePointMW = require('../middleware/vaccinationpoint/delVaccPointMW');
+//
 const getVaccinePointMW = require('../middleware/vaccinationpoint/getVaccPointMW');
+//
 const getVaccinePointsMW = require('../middleware/vaccinationpoint/getVaccPointsMW');
+//
 const saveVaccinePointMW = require('../middleware/vaccinationpoint/saveVaccinePointMW');
+//
+const decreaseVaccineNumberMW = require('../middleware/vaccine/decreaseVaccineNumberMW');
+//
+const increaseVaccineNumberMW = require('../middleware/vaccine/increaseVaccineNumberMW');
 
 
 module.exports = function(app) {
@@ -76,12 +92,16 @@ module.exports = function(app) {
         authenticationMW(objectRep);
         getVaccinePointMW(objectRep);
         getVaccineMW(objectRep);
+        decreaseVaccineNumberMW(objectRep);
+        renderMW(objectRep, 'vakcina_csokkentes')
     });
 
     app.use('/vaccine/:oltopontid/increase/:vakcinaid', function(req, res, next) {
         authenticationMW(objectRep);
         getVaccinePointMW(objectRep);
         getVaccineMW(objectRep);
+        increaseVaccineNumberMW(objectRep);
+        renderMW(objectRep, 'vakcina_noveles');
     });
 
     app.get('/vaccine/:oltopontid/delete/:vakcinaid', function(req, res, next) {
