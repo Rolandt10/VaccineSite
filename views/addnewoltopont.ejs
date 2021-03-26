@@ -1,0 +1,23 @@
+<%- include('head') -%>
+<%- include('navigation') -%>
+<div class="container">
+    <h2>Oltópont hozzáadás</h2>
+    <form>
+        <div class="form-group">
+            <label>Cím:</label>
+            <input class="form-control" placeholder="Adja meg az oltópont címét">
+            <label>Telefonszám:</label>
+            <input class="form-control" placeholder="Adja meg az oltópont telefonszámát">
+            <label>Email:</label>
+            <input class="form-control" placeholder="Adja meg az oltópont email címét">
+            <label for="sel1">Hűtés:</label>
+            <select class="form-control">
+                <option>VAN</option>
+                <option>NINCS</option>
+            </select>
+        </div>
+        <a href="#" class="btn btn__color">Hozzáadás</a>
+        <a href="/vaccinationpoint" class="btn btn__color">Vissza</a>
+    </form>
+</div>
+<%- include('footer') -%>
