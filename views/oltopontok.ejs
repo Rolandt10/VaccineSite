@@ -1,0 +1,40 @@
+<%- include('head') -%>
+<%- include('navigation') -%>
+<h2>Oltópontok</h2>
+    <table class="table">
+      <thead>
+          <tr>
+            <th scope="col">Cím</th>
+            <th scope="col">Telefonszám</th>
+            <th scope="col">Email</th>
+            <th scope="col">Hűtés</th>
+            <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>9025 Győr 123. utca 13.</td>
+            <td>06208881111</td>
+            <td>123@321.com</td>
+            <td>VAN</td>
+            <td>
+              <a href="vakcina.html" class="btn btn__color" title="Vakcina hozzáadása"><i class='bx bxs-virus'></i></a>
+              <a href="editoltopont.html" class="btn btn__color" title="Oltópont módosítása"><i class='bx bx-edit'></i></a>
+              <a href="" class="btn btn__color" title="Oltópont törlése"><i class='bx bx-trash' ></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>8000 Székesfehérvár 321. utca 31.</td>
+            <td>06707772222</td>
+            <td>321@123.com</td>
+            <td>VAN</td>
+            <td>
+              <a href="/vaccine/<%= vaccinationpoint._id %>" class="btn btn__color" title="Vakcina hozzáadása"><i class='bx bxs-virus'></i></a>
+              <a href="/vaccinationpoint/edit/<%= vaccinationpoint._id %>" class="btn btn__color" title="Oltópont módosítása"><i class='bx bx-edit'></i></a>
+              <a href="/vaccinationpoint/delete/<%= vaccinationpoint._id %>" class="btn btn__color" title="Oltópont törlése"><i class='bx bx-trash' ></i></a>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <a href="/vaccinationpoint/new" class="btn btn__color">Hozzáadás</a>
+<%- include('footer') -%>
