@@ -1,0 +1,18 @@
+<%- include('head') -%>
+<%- include('navigation') -%>
+<div class="container">
+    <h2>Vakcina módosítás</h2>
+    <form>
+        <div class="form-group">
+            <label>Gyártó:</label>
+            <input class="form-control" placeholder="Adja meg vakcina gyártóját">
+            <label>Generáció:</label>
+            <input class="form-control" placeholder="Adja meg a vakcina generációját">
+            <label>Darabszám:</label>
+            <input class="form-control" placeholder="Adja meg a vakcina darabszámát">
+        </div>
+        <a href="#" class="btn btn__color">Hozzáadás</a>
+        <a href="/vaccine/<%= vaccinationpoint._id %>" class="btn btn__color">Vissza</a>
+    </form>
+</div>
+<%- include('footer') -%>
