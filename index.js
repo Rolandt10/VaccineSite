@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 
-require('./routes/index')(app);
+app.set('view engine', 'ejs');
 
 app.use(express.static('static'));
+
+require('./routes/index.js')(app);
 
 var server = app.listen(3000);
