@@ -1,0 +1,14 @@
+<%- include('head') -%>
+<%- include('navigation') -%>
+<div class="container">
+    <h2>Vakcina számának csökkentése</h2>
+    <form>
+        <div class="form-group">
+            <label>Darabszám:</label>
+            <input class="form-control" placeholder="A megadott értékkel fog csökkenni a darabszám">
+        </div>
+        <a href="#" class="btn btn__color">Csökkentés</a>
+        <a href="/vaccine/<%= vaccinationpoint._id %>" class="btn btn__color">Vissza</a>
+    </form>
+</div>
+<%- include('footer') -%>
