@@ -5,7 +5,11 @@ const Vakcina = db.model('Vakcina', {
     cim: String,
     telefonszam: String,
     email: String,
-    hutes: Boolean
+    hutes: Boolean,
+    _oltopont: {
+        type: Schema.Types.ObjectId,
+        ref: 'Oltopont'
+    }
 });
 
 module.exports = Oltopont;
