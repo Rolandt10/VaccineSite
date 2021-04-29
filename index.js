@@ -1,14 +1,14 @@
-// var express = require('express');
-// var app = express();
+var express = require('express');
+var app = express();
 
-// app.set('views', './views');
-// app.set('view engine', 'ejs');
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
-// app.use(express.static('static'));
+app.use(express.static('static'));
 
-// require('./routes/index.js')(app);
+require('./routes/index.js')(app);
 
-// var server = app.listen(3000);
+var server = app.listen(3000);
 
 // const OltopontModel = require('./models/oltopont');
 
