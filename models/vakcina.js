@@ -1,4 +1,5 @@
 const db = require('../config/db');
+const Schema = require('mongoose').Schema;
 
 const Vakcina = db.model('Vakcina', {
     gyarto: String,
@@ -6,7 +7,7 @@ const Vakcina = db.model('Vakcina', {
     darabszam: Number,
     _oltopont: {
         type: Schema.Types.ObjectId,
-        ref: 'Vakcina'
+        ref: 'Oltopont'
     }
 });
 

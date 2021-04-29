@@ -8,8 +8,8 @@ module.exports = function(objectRep) {
         OltopontModel.find({}, (err, oltopontok) => {
             if(err)
                 return next(err);
+            res.locals.oltopontok = oltopontok;
+            return next();
         })
-        res.locals.oltopontok = oltopontok;
-        return next();
     };
 };

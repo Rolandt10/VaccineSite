@@ -28,10 +28,16 @@ const decreaseVaccineNumberMW = require('../middleware/vaccine/decreaseVaccineNu
 //Növeli a vakcina szémét, illetve elmenti azt a db-be
 const increaseVaccineNumberMW = require('../middleware/vaccine/increaseVaccineNumberMW');
 
+const OltopontModel = require('../models/oltopont');
+const VakcinaModel = require('../models/vakcina');
+
 
 module.exports = function(app) {
 
-    let objectRep = {};
+    let objectRep = {
+        OltopontModel: OltopontModel,
+        VakcinaModel: VakcinaModel
+    };
 
     app.use('/vaccine/:oltopontid/edit/:vakcinaid',
         authenticationMW(objectRep),
