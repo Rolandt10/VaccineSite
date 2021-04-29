@@ -12,17 +12,19 @@
           </tr>
       </thead>
       <tbody>
+        <% oltopontok.forEach(function(oltopont) { %>
           <tr>
-            <td>8000 Székesfehérvár 321. utca 31.</td>
-            <td>06707772222</td>
-            <td>321@123.com</td>
-            <td>VAN</td>
+            <td><%= oltopont.cim %></td>
+            <td><%= oltopont.telefonszam %></td>
+            <td><%= oltopont.email %></td>
+            <td><%= oltopont.hutes %></td>
             <td>
-              <a href="/vaccine/10" class="btn btn__color" title="Vakcina hozzáadása"><i class='bx bxs-virus'></i></a>
-              <a href="/vaccinationpoint/edit/10" class="btn btn__color" title="Oltópont módosítása"><i class='bx bx-edit'></i></a>
-              <a href="/vaccinationpoint/delete/10" class="btn btn__color" title="Oltópont törlése"><i class='bx bx-trash' ></i></a>
+              <a href="/vaccine/<%= oltopond.id %>" class="btn btn__color" title="Vakcina hozzáadása"><i class='bx bxs-virus'></i></a>
+              <a href="/vaccinationpoint/edit/<%= oltopond.id %>" class="btn btn__color" title="Oltópont módosítása"><i class='bx bx-edit'></i></a>
+              <a href="/vaccinationpoint/delete/<%= oltopond.id %>" class="btn btn__color" title="Oltópont törlése"><i class='bx bx-trash' ></i></a>
             </td>
           </tr>
+        <% }); %> 
       </tbody>
     </table>
     <a href="/vaccinationpoint/new" class="btn btn__color">Hozzáadás</a>
