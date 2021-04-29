@@ -10,12 +10,12 @@ require('./routes/index.js')(app);
 
 var server = app.listen(3000);
 
-// const OltopontModel = require('./models/oltopont');
+const OltopontModel = require('./models/oltopont');
 
-// let oltopont = new OltopontModel();
-// oltopont.gyarto = 'Pfizer';
-// oltopont.generacio = 1;
-// oltopont.darabszam = 10000;
-// oltopont.save((err) => {
-//     console.log(err);
-// });
+let oltopont = new OltopontModel();
+oltopont.gyarto = 'Pfizer';
+oltopont.generacio = 1;
+oltopont.darabszam = 10000;
+oltopont.save((err) => {
+    console.log(err);
+});
