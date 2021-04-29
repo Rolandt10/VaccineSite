@@ -1,15 +1,13 @@
-const Schema = require('mongoose').Schema;
 const db = require('../config/db');
 
 const Vakcina = db.model('Vakcina', {
-    cim: String,
-    telefonszam: String,
-    email: String,
-    hutes: Boolean,
+    gyarto: String,
+    generacio: Number,
+    darabszam: Number,
     _oltopont: {
         type: Schema.Types.ObjectId,
-        ref: 'Oltopont'
+        ref: 'Vakcina'
     }
 });
 
-module.exports = Oltopont;
+module.exports = Vakcina;

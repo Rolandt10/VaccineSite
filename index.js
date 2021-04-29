@@ -10,7 +10,7 @@ require('./routes/index.js')(app);
 
 var server = app.listen(3000);
 
-const OltopontModel = require('./models/oltopont');
+const OltopontModel = require('./models/vakcina');
 
 let oltopont = new OltopontModel();
 oltopont.gyarto = 'Pfizer';
@@ -19,3 +19,4 @@ oltopont.darabszam = 10000;
 oltopont.save((err) => {
     console.log(err);
 });
+

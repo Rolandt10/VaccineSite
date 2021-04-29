@@ -1,9 +1,10 @@
 const db = require('../config/db');
 
 const Oltopont = db.model('Oltopont', {
-    gyarto: String,
-    generacio: Number,
-    darabszam: Number
+    cim: String,
+    telefonszam: String,
+    email: String,
+    hutes: Boolean
 });
 
 module.exports = Oltopont;
