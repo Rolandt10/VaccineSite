@@ -4,7 +4,7 @@ const requireOption = require('../requireOption');
 module.exports = function(objectRep) {
     const OltopontModel = requireOption(objectRep, 'OltopontModel');
     return function (req, res, next) {
-        if (typeof req.body.gyarto === 'undefined' || typeof req.body.generacio === 'undefined' || typeof req.body.darabszam === 'undefined') {
+        if (typeof req.body.cim === 'undefined' || typeof req.body.telefonszam === 'undefined' || typeof req.body.email === 'undefined') {
             return next();
         }
 
@@ -12,9 +12,10 @@ module.exports = function(objectRep) {
             res.locals.oltopont = new OltopontModel();
         }
 
-        res.locals.oltopont.gyarto = req.body.gyarto;
-        res.locals.oltopont.generacio = req.body.generacio;
-        res.locals.oltopont.darabszam = req.body.darabszam;
+        res.locals.oltopont.cim = req.body.cim;
+        res.locals.oltopont.telefonszam = req.body.telefonszam;
+        res.locals.oltopont.email = req.body.email;
+        res.locals.oltopont.hutes = req.body.hutes;
 
         res.locals.oltopont.save(err => {
             if (err) {
