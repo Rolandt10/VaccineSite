@@ -5,7 +5,7 @@ const requireOption = require("../requireOption");
 module.exports = function(objectRep) {
     const OltopontModel = requireOption(objectRep, 'OltopontModel');
     return function (req, res, next) {
-        OltopontModel.findOne({id: req.params.oltopontid}, (err, oltopont) => {
+        OltopontModel.findOne({_id: req.params.oltopontid}, (err, oltopont) => {
             if(err || !oltopont)
                 return next(err);
 

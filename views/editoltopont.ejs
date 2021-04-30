@@ -5,11 +5,11 @@
     <form>
         <div class="form-group">
             <label>Cím:</label>
-            <input class="form-control" placeholder="Adja meg az oltópont címét">
+            <input class="form-control" placeholder="Adja meg az oltópont címét" value="<%= (typeof oltopont === 'undefined') ? '' : oltopont.cim %>">
             <label>Telefonszám:</label>
-            <input class="form-control" placeholder="Adja meg az oltópont telefonszámát">
+            <input class="form-control" placeholder="Adja meg az oltópont telefonszámát" value="<%= (typeof oltopont === 'undefined') ? '' : oltopont.telefonszam %>">
             <label>Email:</label>
-            <input class="form-control" placeholder="Adja meg az oltópont email címét">
+            <input class="form-control" placeholder="Adja meg az oltópont email címét" value="<%= (typeof oltopont === 'undefined') ? '' : oltopont.email %>">
             <label for="sel1">Hűtés:</label>
             <select class="form-control">
                 <option>VAN</option>

@@ -17,7 +17,7 @@
             <td><%= oltopont.cim %></td>
             <td><%= oltopont.telefonszam %></td>
             <td><%= oltopont.email %></td>
-            <td><%= oltopont.hutes %></td>
+            <td><%= (oltopont.hutes === true) ? 'VAN' : 'NINCS' %></td>
             <td>
               <a href="/vaccine/<%= oltopont.id %>" class="btn btn__color" title="Vakcina hozzáadása"><i class='bx bxs-virus'></i></a>
               <a href="/vaccinationpoint/edit/<%= oltopont.id %>" class="btn btn__color" title="Oltópont módosítása"><i class='bx bx-edit'></i></a>
