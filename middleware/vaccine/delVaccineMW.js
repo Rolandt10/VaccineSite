@@ -2,6 +2,14 @@
 
 module.exports = function(objectRep) {
     return function (req, res, next) {
-        next();
+        if (typeof res.locals.vakcina === 'undefined') {
+            return next();
+        }
+        res.locals.vakcina.remove(err => {
+            if (err) {
+                return next(err);
+            }
+            return res.redirect(`/befott/${res.locals.oltopont._id}`);
+        });
     };
 };

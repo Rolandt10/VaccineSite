@@ -5,7 +5,6 @@ module.exports = function(objectRep) {
         if(typeof res.locals.oltopont === 'undefined') {
             return next();
         }
-
         res.locals.oltopont.remove(err => {
             if(err)
                 return next(err);
