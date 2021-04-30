@@ -2,22 +2,22 @@
 <%- include('navigation') -%>
 <div class="container">
     <h2>Oltópont hozzáadás</h2>
-    <form>
+    <form method="POST">
         <div class="form-group">
             <label>Cím:</label>
-            <input class="form-control" placeholder="Adja meg az oltópont címét">
+            <input class="form-control" placeholder="Adja meg az oltópont címét" name="cim">
             <label>Telefonszám:</label>
-            <input class="form-control" placeholder="Adja meg az oltópont telefonszámát">
+            <input class="form-control" placeholder="Adja meg az oltópont telefonszámát" name="telefonszam">
             <label>Email:</label>
-            <input class="form-control" placeholder="Adja meg az oltópont email címét">
+            <input class="form-control" placeholder="Adja meg az oltópont email címét" name="email">
             <label for="sel1">Hűtés:</label>
-            <select class="form-control">
-                <option>VAN</option>
-                <option>NINCS</option>
+            <select class="form-control" name="hutes">
+                <option value="true">VAN</option>
+                <option value="false">NINCS</option>
             </select>
         </div>
-        <a href="/vaccinationpoint" class="btn btn__color">Hozzáadás</a>
-        <a href="/vaccinationpoint" class="btn btn__color">Vissza</a>
+        <button type="submit" class="btn btn__color">Hozzáadás</button>
+        <button href="/vaccinationpoint" class="btn btn__color">Vissza</button>
     </form>
 </div>
 <%- include('footer') -%>

@@ -9,7 +9,7 @@ module.exports = function(objectRep) {
             if (err) {
                 return next(err);
             }
-            return res.redirect(`/befott/${res.locals.oltopont._id}`);
+            return res.redirect(`/vaccine/${res.locals.oltopont._id}`);
         });
     };
 };

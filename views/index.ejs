@@ -2,12 +2,12 @@
 <%- include('./navigation_logout') %>
 <div class="container">
     <h2>Bejelentkezés</h2>
-    <form>
+    <form method="POST">
         <div class="form-group">
             <label>Jelszó</label>
-            <input type="password" class="form-control" placeholder="Jelszó">
+            <input type="password" class="form-control" placeholder="Jelszó" name="password">
         </div>
-        <a href="/vaccinationpoint" class="btn btn__color">Bejelentkezés</a>
+        <input type="submit" class="btn btn__color" value="Bejelentkezés" />
     </form>
 </div>
 <%- include('footer') %>

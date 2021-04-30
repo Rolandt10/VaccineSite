@@ -2,17 +2,17 @@
 <%- include('navigation') -%>
 <div class="container">
     <h2>Vakcina módosítás</h2>
-    <form>
+    <form method="POST">
         <div class="form-group">
             <label>Gyártó:</label>
-            <input class="form-control" placeholder="Adja meg vakcina gyártóját">
+            <input class="form-control" placeholder="Adja meg vakcina gyártóját" value="<%= vakcina.gyarto %>" name="gyarto">
             <label>Generáció:</label>
-            <input class="form-control" placeholder="Adja meg a vakcina generációját">
+            <input class="form-control" placeholder="Adja meg a vakcina generációját" value="<%= vakcina.generacio %>" name="generacio">
             <label>Darabszám:</label>
-            <input class="form-control" placeholder="Adja meg a vakcina darabszámát">
+            <input class="form-control" placeholder="Adja meg a vakcina darabszámát" value="<%= vakcina.darabszam %>" name="darabszam">
         </div>
-        <a href="/vaccine/10" class="btn btn__color">Hozzáadás</a>
-        <a href="/vaccine/10" class="btn btn__color">Vissza</a>
+        <button type="submit" class="btn btn__color">Módosítás</button>
+        <button href="/vaccine/<%= oltopont._id %>" class="btn btn__color">Vissza</button>
     </form>
 </div>
 <%- include('footer') -%>
