@@ -10,6 +10,6 @@ module.exports = function(objectRep) {
                 return next(err);
             res.locals.oltopontok = oltopontok;
             return next();
-        })
+        });
     };
 };
