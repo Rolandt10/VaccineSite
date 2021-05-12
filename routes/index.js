@@ -27,6 +27,8 @@ const saveVaccinePointMW = require('../middleware/vaccinationpoint/saveVaccinePo
 const decreaseVaccineNumberMW = require('../middleware/vaccine/decreaseVaccineNumberMW');
 //Növeli a vakcina szémét, illetve elmenti azt a db-be
 const increaseVaccineNumberMW = require('../middleware/vaccine/increaseVaccineNumberMW');
+//Publikus információk kiírása
+const getPublicInfoMW = require('../middleware/getPublicInfoMW');
 
 const OltopontModel = require('../models/oltopont');
 const VakcinaModel = require('../models/vakcina');
@@ -38,19 +40,12 @@ module.exports = function(app) {
         VakcinaModel: VakcinaModel
     };
 
-    app.use('/vaccine/:oltopontid/edit/:vakcinaid',
-        //authenticationMW(objectRep),
-        getVaccinePointMW(objectRep),
-        getVaccineMW(objectRep),
-        saveVaccineMW(objectRep),
-        renderMW(objectRep, 'editvakcina')
-    );
-
     app.use('/vaccine/:oltopontid/decrease/:vakcinaid',
         //authenticationMW(objectRep),
         getVaccinePointMW(objectRep),
         getVaccineMW(objectRep),
         decreaseVaccineNumberMW(objectRep),
+        saveVaccineMW(objectRep),
         renderMW(objectRep, 'vakcina_csokkentes')
     );
 
@@ -67,6 +62,14 @@ module.exports = function(app) {
         getVaccinePointMW(objectRep),
         getVaccineMW(objectRep),
         delVaccineMW(objectRep)
+    );
+
+    app.use('/vaccine/:oltopontid/edit/:vakcinaid',
+        //authenticationMW(objectRep),
+        getVaccinePointMW(objectRep),
+        getVaccineMW(objectRep),
+        saveVaccineMW(objectRep),
+        renderMW(objectRep, 'editvakcina')
     );
 
     app.use('/vaccinationpoint/edit/:oltopontid',
@@ -102,7 +105,8 @@ module.exports = function(app) {
         renderMW(objectRep, 'addnewoltopont')
     );
 
-    app.get('/information', 
+    app.get('/information',
+        getPublicInfoMW(objectRep), 
         renderMW(objectRep, 'public_oltopontok')
     );
 

@@ -2,13 +2,13 @@
 <%- include('navigation') -%>
 <div class="container">
     <h2>Vakcina számának csökkentése</h2>
-    <form>
+    <form method="POST">
         <div class="form-group">
-            <label>Darabszám:</label>
-            <input class="form-control" placeholder="A megadott értékkel fog csökkenni a darabszám">
+            <label>Jelenlegi darabszám: <%= vakcina.darabszam %></label>
+            <input class="form-control" placeholder="A megadott értékkel fog csökkenni a darabszám" name="darabszam">
         </div>
-        <a href="/vaccine/10" class="btn btn__color">Csökkentés</a>
-        <a href="/vaccine/10" class="btn btn__color">Vissza</a>
+        <a href="/vaccine/<%= oltopont._id %>" type="submit" class="btn btn__color">Csökkentés</a>
+        <a href="/vaccine/<%= oltopont._id %>" class="btn btn__color">Vissza</a>
     </form>
 </div>
 <%- include('footer') -%>

@@ -18,14 +18,14 @@ require('./routes/index.js')(app);
 
 var server = app.listen(3000);
 
-const OltopontModel = require('./models/oltopont');
+// const OltopontModel = require('./models/oltopont');
 
-let oltopont = new OltopontModel();
-oltopont.cim = 'asd';
-oltopont.telefonszam = '123123123';
-oltopont.email = 'email';
-oltopont.hutes = true;
-oltopont.save((err) => {
-    console.log(err);
-});
+// let oltopont = new OltopontModel();
+// oltopont.cim = 'asd';
+// oltopont.telefonszam = '123123123';
+// oltopont.email = 'email';
+// oltopont.hutes = true;
+// oltopont.save((err) => {
+//     console.log(err);
+// });
 
