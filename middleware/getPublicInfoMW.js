@@ -20,7 +20,6 @@ module.exports = function(objectRep) {
                 { $unwind: { path: '$Oltopont' } }
             ],
             function(err, result) {
-                console.log(result);
                 if (err) {
                     return next(err);
                 }

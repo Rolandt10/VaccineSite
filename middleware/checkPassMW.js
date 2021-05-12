@@ -3,14 +3,13 @@
 
 module.exports = function(objectRep) {
     return function(req, res, next) {
-        console.log(req.body.password);
         if (typeof req.body.password === 'undefined') {
             return next();
         }
 
         if (req.body.password === 'asd') {
             req.session.belepve = true;
-            return req.session.save(err => res.redirect('/vaccianationpoint'));
+            return req.session.save(err => res.redirect('/vaccinationpoint'));
         }
 
         res.locals.error = 'Hibás jelszó!';

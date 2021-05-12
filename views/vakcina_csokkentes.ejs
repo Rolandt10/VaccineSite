@@ -7,8 +7,8 @@
             <label>Jelenlegi darabszám: <%= vakcina.darabszam %></label>
             <input class="form-control" placeholder="A megadott értékkel fog csökkenni a darabszám" name="darabszam">
         </div>
-        <a href="/vaccine/<%= oltopont._id %>" type="submit" class="btn btn__color">Csökkentés</a>
-        <a href="/vaccine/<%= oltopont._id %>" class="btn btn__color">Vissza</a>
+        <button href="/vaccine/<%= oltopont._id %>" type="submit" class="btn btn__color">Csökkentés</button>
+        <button onclick="location.href='/vaccine/<%= oltopont._id %>'" type="button" class="btn btn__color">Vissza</button>
     </form>
 </div>
 <%- include('footer') -%>
