@@ -11,6 +11,7 @@
             <th></th>
           </tr>
       </thead>
+      <% if(oltopontok.length !== 0) { %>
       <tbody>
         <% oltopontok.forEach(function(oltopont) { %>
           <tr>
@@ -26,6 +27,9 @@
           </tr>
         <% }); %> 
       </tbody>
+      <% }else{ %>
+        <span>Jelenleg nincsenek oltópontok!</span>
+      <% } %>
     </table>
     <a href="/vaccinationpoint/new" class="btn btn__color">Hozzáadás</a>
 <%- include('footer') -%>
