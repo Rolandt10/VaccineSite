@@ -4,6 +4,7 @@ const requireOption = require('./requireOption');
 module.exports = function(objectRep) {
     const VakcinaModel = requireOption(objectRep, 'VakcinaModel');
     return function (req, res, next) {
+        //A cím, illetve a gyártó szerint groupoljuk, és a darabszámot összedajuk. Így egy címhez tartozó ugyanazon gyártótól származó vakcinák darabszámai összeadódnak.
         VakcinaModel.aggregate([
             {
                 $lookup: {
