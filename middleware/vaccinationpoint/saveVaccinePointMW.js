@@ -8,6 +8,10 @@ module.exports = function(objectRep) {
             return next();
         }
 
+        if((req.body.cim).length <= 3 || (req.body.telefonszam).length < 6 || (req.body.email).length <= 0) {
+            return next();
+        }
+
         if (typeof res.locals.oltopont === 'undefined') {
             res.locals.oltopont = new OltopontModel();
         }
