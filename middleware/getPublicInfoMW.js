@@ -4,51 +4,36 @@ const requireOption = require('./requireOption');
 module.exports = function(objectRep) {
     const VakcinaModel = requireOption(objectRep, 'VakcinaModel');
     return function (req, res, next) {
-        VakcinaModel.aggregate(
-            [
-                {
-                    $lookup: {
-                        from: 'oltoponts',
-                        localField: '_id',
-                        foreignField: '_id',
-                        as: 'Oltopont'
-                    }
-                },
-                {
-                    $limit: 10
-                },
-                { $unwind: { path: '$Oltopont' } }
-            ],
-            function(err, result) {
-                if (err) {
-                    return next(err);
+        VakcinaModel.aggregate([
+            {
+                $lookup: {
+                    from: 'oltoponts',
+                    localField: '_oltopont',
+                    foreignField: '_id',
+                    as: 'Oltopont'
                 }
-                res.locals.publikus_informaciok = result.map(e => {
-                    return { cim: e.Oltopont.cim, gyarto: e.gyarto, darabszam: e.darabszam };
-                });
-                return next();
+            },
+            { $unwind: { path: '$Oltopont' } },
+            {
+                $group: {
+                    _id: {
+                        cim: "$Oltopont.cim",
+                        gyarto: "$gyarto"
+                    },
+                    vakcinak: {
+                        $sum: "$darabszam"
+                    }
+                }
+            },
+        ],
+        function(err, result) {
+            if(err) {
+                return next(err);
             }
-        );
-        // VakcinaModel.aggregate([
-        //     {
-        //         $lookup:
-        //         {
-        //             from: 'oltoponts',
-        //             localField: '_id',
-        //             foreignField: '_id',
-        //             as: 'Oltopont'
-        //         },
-        //     },
-        // ],
-        // function(err, result) {
-        //     console.log(result);
-        //     if(err) {
-        //         return next(err);
-        //     }
-        //     res.locals.publikus_informaciok = result.map(e => {
-        //         return { gyarto: e.gyarto, darabszam: e.darabszam};
-        //     });
-        //     return next();
-        // });
+            res.locals.publikus_informaciok = result.map(e => {
+                return { cim: e._id.cim, gyarto: e._id.gyarto, darabszam: e.vakcinak};
+            });
+            return next();
+        });
     };
 };
