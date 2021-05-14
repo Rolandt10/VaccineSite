@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var increaseVaccineNumberMW = require('../../middleware/vaccine/increaseVaccineNumberMW');
+var increaseVaccineNumberMW = require('../../../middleware/vaccine/increaseVaccineNumberMW');
 
 describe('increaseVaccineNumberMW', function() {
     it('should save vaccines', function(done) {

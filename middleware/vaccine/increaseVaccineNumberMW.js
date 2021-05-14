@@ -2,7 +2,6 @@
 
 module.exports = function(objectRep) {
     return function(req, res, next) {
-        console.log(res.locals.vakcina);
         if (typeof req.body.darabszam === 'undefined') {
             return next();
         }
