@@ -5,8 +5,6 @@ const requireOption = require('../requireOption');
 module.exports = function(objectRep) {
     const VakcinaModel = requireOption(objectRep, 'VakcinaModel');
     return function(req, res, next) {
-        console.log("---------------");
-        console.log(typeof req.body.gyarto);
         if (typeof req.body.gyarto === 'undefined' || typeof req.body.generacio === 'undefined' || typeof req.body.darabszam === 'undefined' || typeof res.locals.oltopont === 'undefined') {
             return next();
         }

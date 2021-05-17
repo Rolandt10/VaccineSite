@@ -8,7 +8,7 @@ module.exports = function(objectRep) {
         OltopontModel.findOne({_id: req.params.oltopontid}, (err, oltopont) => {
             if(err || !oltopont)
                 return next(err);
-
+    
             res.locals.oltopont = oltopont;
             return next();
         });

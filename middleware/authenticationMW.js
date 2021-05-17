@@ -5,6 +5,6 @@ module.exports = function(objectRep) {
         if (typeof req.session.belepve === 'undefined' || req.session.belepve !== true) {
             return res.redirect('/');
         }
-        next();
+        return next();
     };
 };
