@@ -1,6 +1,6 @@
 # VaccineSite
 
-Egyszerű CRUD webalkalmazás, melynek segítségével tárolni tudunk vakcinákat, azok mennyiségét, valamint az oltópontokat és az ahhoz tartozó vakcinákat.
+CRUD webalkalmazás, melynek segítségével tárolni tudunk vakcinákat, azok mennyiségét, valamint az oltópontokat és az ahhoz tartozó vakcinákat.
 
 **Stack:**
 <ul>
